@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Custom Metrics Sinks | Heron Docs</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.3">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../../docs/contributors/custom-scheduler.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.1.2" data-basepath="../.." data-revision="Tue Dec 08 2015 13:55:33 GMT-0800 (PST)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" >
+            
+            <span><b>1.</b> Developers</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" >
+            
+            <span><b>1.1.</b> Contributors</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="docs/contributors/custom-scheduler.html">
+            
+                
+                    <a href="../../docs/contributors/custom-scheduler.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        Custom Schedulers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2" data-path="docs/contributors/custom-sink.html">
+            
+                
+                    <a href="../../docs/contributors/custom-sink.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        Custom Metrics Sinks
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Heron Docs</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="create-a-custom-metrics-sink">Create a Custom Metrics Sink</h1>
+<p>Heron comes equipped with three metrics sinks that you can apply:</p>
+<ul>
+<li><a href=""><code>GraphiteSink</code></a></li>
+<li><a href=""><code>ScribeSink</code></a></li>
+<li><a href=""><code>FileSink</code></a></li>
+</ul>
+<h2 id="concepts">Concepts</h2>
+<p>Concepts:</p>
+<ul>
+<li>Sink</li>
+<li>Records</li>
+</ul>
+<h2 id="custom-sinks">Custom Sinks</h2>
+<p>Maven:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>com.twitter.heron<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>metricsmgr<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>TODO<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+</code></pre>
+<p>You can also create your own custom sinks by implementing the <a href=""><code>IMetricsSink</code></a>
+interface, which requires you to implement the following methods:</p>
+<ul>
+<li><code>void init(Map&lt;String, Object&gt; conf, SinkContext context)</code> --- Defines the
+initialization behavior of the sink. The <code>conf</code> map is the configuration that
+is passed to the sink by the <code>.yaml</code> configuration file; the <code>SinkContext</code>
+object enables you to both access values from the sink&apos;s runtime context
+(including the sink&apos;s ID and the topology name) and to</li>
+<li><code>void processRecord(MetricsRecord record)</code> --- Defines how each
+<code>MetricsRecord</code> that passes through the sink is processed</li>
+<li><code>void flush()</code> --- Flush any buffered metrics; this function is called at the
+interval specified by the <code>flush-frequency-ms</code></li>
+<li><code>void close()</code> --- Closes the stream and releases any system resources
+associated with it; if the stream is already closed, invoking <code>close()</code> has no
+effect</li>
+</ul>
+<p>Below is an example implementation that simply prints the contents of each
+metrics record as it passes through:</p>
+<pre><code class="lang-java">import com.twitter.heron.metricsmgr.api.metrics.MetricsInfo;
+import com.twitter.heron.metricsmgr.api.metrics.MetricsRecord;
+import com.twitter.heron.metricsmgr.api.sink.IMetricsSink;
+import com.twitter.heron.metricsmgr.api.sink.SinkContext;
+
+public class PrintSink implements IMetricsSink {
+    private String topologyName;
+    private String sinkId;
+    private final String PARAMETER1 = &quot;
+
+    @Override
+    public void init(Map&lt;String, Object&gt; conf, SinkContext context) {
+        System.out.println(&quot;Sink configuration:&quot;);
+        for (Map.Entry&lt;String, Object&gt; config : conf.entrySet()) {
+            // print each config parameter and value 
+        }
+        // Extract the topology name and sink ID for use in the sink
+        topologyName = context.getTopologyName();
+        sinkId = context.getSinkId(); 
+    }
+
+    @Override
+    public void processRecord(MetricsRecord record) {
+        System.out.println(&quot;Record received:&quot;);
+        System.out.println(record.toString());
+    }
+
+    @Override
+    public void flush() {
+        // Since we&apos;re just printing to stdout in this sink, we don&apos;t need to
+        // specify any flush() behavior 
+    }
+
+    @Override
+    public void close() {
+        // Since we&apos;re just printing to stdout in this sink, we don&apos;t need to
+        // specify any close() behavior 
+    }
+}
+</code></pre>
+<h2 id="using-your-custom-sink">Using Your Custom Sink</h2>
+<p>Configurable parameters for all sinks:</p>
+<ul>
+<li><p><code>sinks</code> --- A list of all sinks that you intend to use. Example:</p>
+<pre><code class="lang-yaml"> sinks:
+   - first-sink
+   - second-sink
+   - etc
+</code></pre>
+</li>
+<li><p><code>class</code> --- The Java class name of your custom implementation of the
+<code>IMetricsSink</code> interface, e.g. <code>com.example.heron.metrics.PrintSink</code>.</p>
+</li>
+<li><code>flush-frequency-ms</code> --- The frequency (in milliseconds) at which the
+<code>flush()</code> method is called in your implementation of <code>IMetricsSink</code>.</li>
+<li><code>sink-restart-attempts</code> --- The number of times that a sink will attempt to
+restart if it throws exceptions and dies. If you do not set this, the default
+is 0; if you set it to -1, the sink will attempt to restart forever.</li>
+</ul>
+<p>Alter <code>metrics_sinks.yaml</code> and add an entry for your custom sink:</p>
+<pre><code class="lang-yaml">sinks:
+  - print-sink
+
+print-sink:
+  class: &quot;com.example.heron.metrics.PrintSink&quot;
+  flush-frequency-ms: 60000 # One minute
+  sink-restart-attempts: -1 # Attempt to restart forever
+</code></pre>
+<p>If you&apos;re using multiple sinks your <code>metrics_sinks.yaml</code> file may look something
+like this:</p>
+<pre><code class="lang-yaml">sinks:
+  - print-sink
+  -
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../docs/contributors/custom-scheduler.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Custom Schedulers"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
